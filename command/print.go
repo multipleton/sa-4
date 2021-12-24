@@ -7,9 +7,9 @@ import (
 )
 
 type Print struct {
-	value string
+	Value string
 }
 
 func (p *Print) Execute(loop engine.Handler) {
-	fmt.Println(p.value)
+	fmt.Println(p.Value)
 }

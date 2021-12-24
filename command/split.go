@@ -1,19 +1,27 @@
 package command
 
 import (
-	"strings"
-
 	"github.com/multipleton/sa-4/engine"
 )
 
 type Split struct {
-	input     string
-	separator string
+	Input     string
+	Separator rune
 }
 
 func (s *Split) Execute(loop engine.Handler) {
-	splitted := strings.Split(s.input, s.separator)
+	var splitted []string
+	var buffer string
+	for _, entry := range s.Input {
+		if entry == s.Separator && len(buffer) > 0 {
+			splitted = append(splitted, buffer)
+			buffer = ""
+			continue
+		}
+		buffer += string(entry)
+	}
+	splitted = append(splitted, buffer)
 	for _, entry := range splitted {
-		loop.Post(&Print{value: entry})
+		loop.Post(&Print{Value: entry})
 	}
 }
