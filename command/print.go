@@ -7,9 +7,9 @@ import (
 )
 
 type Print struct {
-	arg string
+	value string
 }
 
-func (p *Print) Execute(loop *engine.Handler) {
-	fmt.Println(p.arg)
+func (p *Print) Execute(loop engine.Handler) {
+	fmt.Println(p.value)
 }
