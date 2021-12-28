@@ -6,6 +6,6 @@ Software Architecture - Laboratory Work #4
 
 `From root directory run:`
 
-`go run ./cmd/server text.txt`
+`go run ./cmd/server test.txt`
 
 `(or any path to input file instead of 'text.txt')`
