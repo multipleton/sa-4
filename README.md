@@ -2,10 +2,10 @@
 
 Software Architecture - Laboratory Work #4
 
-## How to run it?
+## How to use
 
-`From root directory run:`
+From root directory:
 
 `go run ./cmd/server test.txt`
 
-`(or any path to input file instead of 'test.txt')`
+(or any path to input file instead of 'test.txt')
