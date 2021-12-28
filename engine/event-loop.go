@@ -24,13 +24,13 @@ func (q *MessageQueue) pull() Command {
 
 func (q *MessageQueue) isEmpty() bool {
 	return !(len(q.c) > 0)
-} 
+}
 
 type EventLoop struct {
-	queue *MessageQueue
+	queue       *MessageQueue
 	stopConfirm chan struct{}
 	stopRequest bool
-	finished bool
+	finished    bool
 }
 
 func (el *EventLoop) Start() {
@@ -40,15 +40,15 @@ func (el *EventLoop) Start() {
 	el.finished = false
 	go func() {
 		for {
-		if (el.queue.isEmpty() && el.stopRequest) {
-			el.finished = true
-			el.stopConfirm <- struct{}{}
-			return
-		} else if (!el.queue.isEmpty()) {
-			cmd := el.queue.pull()
-			cmd.Execute(el)
+			if el.queue.isEmpty() && el.stopRequest {
+				el.finished = true
+				el.stopConfirm <- struct{}{}
+				return
+			} else if !el.queue.isEmpty() {
+				cmd := el.queue.pull()
+				cmd.Execute(el)
+			}
 		}
-	}
 	}()
 }
 
