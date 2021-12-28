@@ -8,4 +8,4 @@ Software Architecture - Laboratory Work #4
 
 `go run ./cmd/server test.txt`
 
-`(or any path to input file instead of 'text.txt')`
+`(or any path to input file instead of 'test.txt')`
