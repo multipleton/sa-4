@@ -1,0 +1,8 @@
+print first
+split a/a/a 3
+print second
+print third
+split 5:4:3:2 :
+print should fails
+split wrong args count
+split wrong separator
