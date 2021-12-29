@@ -7,7 +7,7 @@ import (
 	"github.com/multipleton/sa-4/engine"
 )
 
-func parse(line string) engine.Command {
+func Parse(line string) engine.Command {
 	arr := strings.Fields(line)
 	if arr[0] == "print" {
 		if len(arr) == 2 {
