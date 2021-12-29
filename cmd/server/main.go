@@ -5,7 +5,6 @@ import (
 	"errors"
 	"fmt"
 	"os"
-	"parser"
 	"github.com/multipleton/sa-4/parser"
 	//"github.com/multipleton/sa-4/command"
 	"github.com/multipleton/sa-4/engine"
